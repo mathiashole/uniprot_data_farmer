@@ -2,15 +2,15 @@
 
 # Check if a text file was provided as an argument
 if [[ ${#args[@]} -eq 0 || " ${args[@]} " =~ " -h " ]]; then
-  # Mostrar mensaje de ayuda
-  echo "Usage: program 😺 [arguments]"
+  # show help message
+  echo "Usage: program 👩🏻‍🌾 [arguments]"
   echo
-  echo "🙀 ARGUMENTS:"
-  echo "  -h      Este es un argumento de ejemplo."
-  echo "  -f      Este es otro argumento de ejemplo."
-  echo "  -l      Este es un tercer argumento de ejemplo."
+  echo "🎃 ARGUMENTS:"
+  echo "  -h      no arguments yet"
+  echo "  -f      no arguments yet"
+  echo "  -l      no arguments yet"
   echo
-  echo "😻 CONTACT"
+  echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
   echo "  joacomangino@gmail.com"
   echo "  https://twitter.com/joaquinmangino"
