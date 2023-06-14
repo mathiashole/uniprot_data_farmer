@@ -2,7 +2,7 @@
 
 [![gnubash](https://img.shields.io/badge/Bash-brightgreen?style=for-the-badge&logo=gnubash&logoColor=white&labelColor=101010)](https://www.gnu.org/software/bash/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mathiashole/uniprot_data_farmer?logo=GitHub&style=for-the-badge)
-
+![GitHub](https://img.shields.io/github/license/mathiashole/uniprot_data_farmer?color=%23179287&style=for-the-badge)
 
 ## :hammer: in progress
 
