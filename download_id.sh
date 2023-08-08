@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Global variable
+tag=$1
+#
+
 # Check if a text file was provided as an argument
 if [[ ${#args[@]} -eq 0 || " ${args[@]} " =~ " -h " ]]; then
   # show help message
@@ -19,6 +23,20 @@ if [[ ${#args[@]} -eq 0 || " ${args[@]} " =~ " -h " ]]; then
 
   exit 1
 fi
+
+# Set tag of file
+if [[ "$tag" == "-json" ]]; then
+  # set tag json
+  tag=".json"
+  echo $tag
+elif [[ "$tag" == "-fasta" ]]; then
+  # set tag fasta
+  tag=".fasta"
+  echo $tag
+else
+  echo ""
+fi
+
 
 # Check if the "seqDownload" folder exists; if not, create it
 if [ ! -d "seqDownload" ]; then
