@@ -22,7 +22,7 @@ if [[ -n "${tag_extension[$tag]}" ]]; then
   extension="${tag_extension[$tag]}"
   #echo $extension
 else
-    echo "Unknown label."
+  echo "Invalid extension in the program: $tag"
 fi
 
 
@@ -40,8 +40,8 @@ if [ -f "$1" ]; then
     # Check if the line contains a valid ID
     if [[ $id =~ ^[A-Za-z0-9]+$ ]]; then
        # Download the FASTA file for each valid ID
-      url="https://rest.uniprot.org/uniprotkb/${id}.fasta"
-      file_name="uniprot_${id}.fasta"
+      url="https://rest.uniprot.org/uniprotkb/${id}${extension}"
+      file_name="uniprot_${id}${extension}"
       output_path="seqDownload/$file_name"
       curl -o "$output_path" "$url"
       echo "The file $file_name has been downloaded successfully."
