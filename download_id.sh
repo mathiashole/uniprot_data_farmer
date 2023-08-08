@@ -8,6 +8,7 @@ listID=$2
 declare -A tag_extension
 tag_extension["-json"]=".json"
 tag_extension["-fasta"]=".fasta"
+tag_extension["-gff"]=".gff"
 
 # Check if a text file was provided as an argument
 if [[ $# -eq 0 || $# -eq 1 ]]; then
