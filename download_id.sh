@@ -26,10 +26,9 @@ else
 fi
 
 
-
 # Check if the "seqDownload" folder exists; if not, create it
-if [ ! -d "seqDownload" ]; then
-  mkdir seqDownload
+if [ ! -d "fileDownload" ]; then
+  mkdir fileDownload
 fi
 
 # Check if the text file exists
