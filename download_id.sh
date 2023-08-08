@@ -2,26 +2,12 @@
 
 # Global variable
 tag=$1
+vec=$2
 #
 
 # Check if a text file was provided as an argument
-if [[ ${#args[@]} -eq 0 || " ${args[@]} " =~ " -h " ]]; then
-  # show help message
-  echo "Usage: program 👩🏻‍🌾 [arguments]"
-  echo
-  echo "🎃 ARGUMENTS:"
-  echo "  -h      no arguments yet"
-  echo "  -f      no arguments yet"
-  echo "  -l      no arguments yet"
-  echo
-  echo "🐮 CONTACT"
-  echo "  https://github.com/mathiashole"
-  echo "  joacomangino@gmail.com"
-  echo "  https://twitter.com/joaquinmangino"
-  echo
-  echo "  MIT © Mathias Mangino"
+if [[ $# -eq 0 || $# -eq 1 ]]; then
 
-  exit 1
 fi
 
 # Set tag of file
@@ -65,4 +51,21 @@ else
   exit 1
 fi
 
+show_help(){
+  # show help message
+  echo "Usage: program 👩🏻‍🌾 [arguments]"
+  echo
+  echo "🎃 ARGUMENTS:"
+  echo "  -h      no arguments yet"
+  echo "  -f      no arguments yet"
+  echo "  -l      no arguments yet"
+  echo
+  echo "🐮 CONTACT"
+  echo "  https://github.com/mathiashole"
+  echo "  joacomangino@gmail.com"
+  echo "  https://twitter.com/joaquinmangino"
+  echo
+  echo "  MIT © Mathias Mangino"
 
+  exit 1
+}
