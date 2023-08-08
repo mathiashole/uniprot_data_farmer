@@ -3,7 +3,11 @@
 # Global variable
 tag=$1
 vec=$2
-#
+
+# Define mapping from tags to extensions in an associative array
+declare -A tag_extension
+tag_extension["-json"]=".json"
+tag_extension["-fasta"]=".fasta"
 
 # Check if a text file was provided as an argument
 if [[ $# -eq 0 || $# -eq 1 ]]; then
@@ -12,18 +16,15 @@ elif [ $# -eq 1 ] && [ $1 == "-h" ] && [ $1 == "--help" ]; then
   show_help
 fi
 
-# Set tag of file
-if [[ "$tag" == "-json" ]]; then
-  # set tag json
-  tag=".json"
-  echo $tag
-elif [[ "$tag" == "-fasta" ]]; then
-  # set tag fasta
-  tag=".fasta"
-  echo $tag
+# Check if the tag is a valid key in the associative array
+if [[ -n "${tag_extension[$tag]}" ]]; then
+  # Get the corresponding extension from the array
+  extension="${tag_extension[$tag]}"
+  #echo $extension
 else
-  echo ""
+    echo "Unknown label."
 fi
+
 
 
 # Check if the "seqDownload" folder exists; if not, create it
