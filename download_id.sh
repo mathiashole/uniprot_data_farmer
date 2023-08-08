@@ -2,7 +2,7 @@
 
 # Global variable
 tag=$1
-vec=$2
+listID=$2
 
 # Define mapping from tags to extensions in an associative array
 declare -A tag_extension
@@ -32,7 +32,7 @@ if [ ! -d "fileDownload" ]; then
 fi
 
 # Check if the text file exists
-if [ -f "$1" ]; then
+if [ -f "$listID" ]; then
   # Iterate over each line in the text file
   while IFS= read -r id
   do
@@ -47,9 +47,9 @@ if [ -f "$1" ]; then
     else
       echo "Invalid ID in the file: $id"
     fi
-  done < "$1"
+  done < "$listID"
 else
-  echo "The file $1 does not exist."
+  echo "The file $listID does not exist."
   exit 1
 fi
 
