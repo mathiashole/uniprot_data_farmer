@@ -64,6 +64,9 @@ show_help(){
   echo "  -json, --json   Download json file"
   echo "  -gff, --gff   Download gff file"
   echo
+  echo "🎃 ARGUMENTS:"
+  echo "  First vector of accession in text format."
+  echo
   echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
   echo "  joacomangino@gmail.com"
