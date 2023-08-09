@@ -12,7 +12,9 @@ tag_extension["-gff"]=".gff"
 
 # Check if a text file was provided as an argument
 if [[ $# -eq 0 || $# -eq 1 ]]; then
+
   show_help
+  
 elif [ $# -eq 1 ] && [ $1 == "-h" ] && [ $1 == "--help" ]; then
   show_help
 elif [ $1 == "-v" ] && [ $1 == "--version" ]; then
