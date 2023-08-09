@@ -56,7 +56,7 @@ fi
 
 show_help(){
   # show help message
-  echo "Usage: program 👩🏻‍🌾"
+  echo "Usage: Uniprot farmer 👩🏻‍🌾"
   echo
   echo "🎃 OPTIONS:"
   echo "  -h, --help    Show this help"
