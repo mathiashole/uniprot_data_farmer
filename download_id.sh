@@ -79,6 +79,6 @@ show_help(){
 
 # Function to show the version of the program
 show_version() {
-  echo "Uniprot farmer v0.0.1"\n;
+  echo -e "Uniprot farmer v0.0.1\n"
 }
 
