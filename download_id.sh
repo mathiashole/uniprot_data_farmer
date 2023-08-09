@@ -56,12 +56,13 @@ fi
 
 show_help(){
   # show help message
-  echo "Usage: program 👩🏻‍🌾 [arguments]"
+  echo "Usage: program 👩🏻‍🌾"
   echo
-  echo "🎃 ARGUMENTS:"
-  echo "  -h      no arguments yet"
-  echo "  -f      no arguments yet"
-  echo "  -l      no arguments yet"
+  echo "🎃 OPTIONS:"
+  echo "  -h, --help    Show this help"
+  echo "  -fas, --fasta     no arguments yet"
+  echo "  -json, --json      no arguments yet"
+  echo "  -gff, --gff"
   echo
   echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
