@@ -60,9 +60,9 @@ show_help(){
   echo
   echo "🎃 OPTIONS:"
   echo "  -h, --help    Show this help"
-  echo "  -fas, --fasta     no arguments yet"
-  echo "  -json, --json      no arguments yet"
-  echo "  -gff, --gff"
+  echo "  -fas, --fasta   Download fasta file"
+  echo "  -json, --json   Download json file"
+  echo "  -gff, --gff   Download gff file"
   echo
   echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
