@@ -32,29 +32,6 @@ show_help(){
   exit 1
 }
 
-# Define mapping from tags to extensions in an associative array
-declare -A tag_extension
-tag_extension["-json"]=".json"
-tag_extension["-fasta"]=".fasta"
-tag_extension["-gff"]=".gff"
-
-# Check if a text file was provided as an argument
-if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
-
-  show_help
-
-elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
-  
-  show_version
-
-elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key in the associative array
-  # Get the corresponding extension from the array
-  extension="${tag_extension[$tag]}"
-  #echo $extension
-else
-  echo "Invalid extension in the program: $tag"
-fi
-
 getfile_data(){
   # Check if the "seqDownload" folder exists; if not, create it
   if [ ! -d "fileDownload" ]; then
@@ -83,3 +60,27 @@ getfile_data(){
     exit 1
   fi
 }
+
+# Define mapping from tags to extensions in an associative array
+declare -A tag_extension
+tag_extension["-json"]=".json"
+tag_extension["-fasta"]=".fasta"
+tag_extension["-gff"]=".gff"
+
+# Check if a text file was provided as an argument
+if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
+
+  show_help
+
+elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
+  
+  show_version
+
+elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key in the associative array
+  # Get the corresponding extension from the array
+  extension="${tag_extension[$tag]}"
+  #echo $extension
+else
+  echo "Invalid extension in the program: $tag"
+fi
+
