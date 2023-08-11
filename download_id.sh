@@ -32,7 +32,6 @@ show_help(){
   exit 1
 }
 
-
 # Define mapping from tags to extensions in an associative array
 declare -A tag_extension
 tag_extension["-json"]=".json"
@@ -75,7 +74,7 @@ if [ -f "$listID" ]; then
        # Download the FASTA file for each valid ID
       url="https://rest.uniprot.org/uniprotkb/${id}${extension}"
       file_name="uniprot_${id}${extension}"
-      output_path="seqDownload/$file_name"
+      output_path="fileDownload/$file_name"
       curl -o "$output_path" "$url"
       echo "The file $file_name has been downloaded successfully."
     else
