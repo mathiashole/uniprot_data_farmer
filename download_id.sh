@@ -4,6 +4,35 @@
 tag=$1
 listID=$2
 
+# Function to show the version of the program
+show_version(){
+  echo -e "Uniprot farmer v0.0.1\n"
+}
+
+show_help(){
+  # show help message
+  echo "Usage: Uniprot farmer 👩🏻‍🌾"
+  echo
+  echo "🎃 OPTIONS:"
+  echo "  -h, --help    Show this help"
+  echo "  -fas, --fasta   Download fasta file"
+  echo "  -json, --json   Download json file"
+  echo "  -gff, --gff   Download gff file"
+  echo
+  echo "🎃 ARGUMENTS:"
+  echo "  First vector of accession in text format."
+  echo
+  echo "🐮 CONTACT"
+  echo "  https://github.com/mathiashole"
+  echo "  joacomangino@gmail.com"
+  echo "  https://twitter.com/joaquinmangino"
+  echo
+  echo "  MIT © Mathias Mangino"
+
+  exit 1
+}
+
+
 # Define mapping from tags to extensions in an associative array
 declare -A tag_extension
 tag_extension["-json"]=".json"
@@ -11,14 +40,14 @@ tag_extension["-fasta"]=".fasta"
 tag_extension["-gff"]=".gff"
 
 # Check if a text file was provided as an argument
-if [[ $# -eq 0 || $# -eq 1 ]]; then
+if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
 
   show_help
+
+elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
   
-elif [ $# -eq 1 ] && [ $1 == "-h" ] && [ $1 == "--help" ]; then
-  show_help
-elif [ $1 == "-v" ] && [ $1 == "--version" ]; then
   show_version
+
 fi
 
 # Check if the tag is a valid key in the associative array
@@ -57,32 +86,4 @@ else
   echo "The file $listID does not exist."
   exit 1
 fi
-
-show_help(){
-  # show help message
-  echo "Usage: Uniprot farmer 👩🏻‍🌾"
-  echo
-  echo "🎃 OPTIONS:"
-  echo "  -h, --help    Show this help"
-  echo "  -fas, --fasta   Download fasta file"
-  echo "  -json, --json   Download json file"
-  echo "  -gff, --gff   Download gff file"
-  echo
-  echo "🎃 ARGUMENTS:"
-  echo "  First vector of accession in text format."
-  echo
-  echo "🐮 CONTACT"
-  echo "  https://github.com/mathiashole"
-  echo "  joacomangino@gmail.com"
-  echo "  https://twitter.com/joaquinmangino"
-  echo
-  echo "  MIT © Mathias Mangino"
-
-  exit 1
-}
-
-# Function to show the version of the program
-show_version() {
-  echo -e "Uniprot farmer v0.0.1\n"
-}
 
