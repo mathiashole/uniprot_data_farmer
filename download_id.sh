@@ -6,7 +6,7 @@ listID=$2
 
 # Function to show the version of the program
 show_version(){
-  echo -e "Uniprot farmer v0.0.1\n"
+  echo -e "\nUniprot farmer v0.0.1\n"
 }
 
 show_help(){
