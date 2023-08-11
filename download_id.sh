@@ -80,6 +80,9 @@ elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key i
   # Get the corresponding extension from the array
   extension="${tag_extension[$tag]}"
   #echo $extension
+  # Execute main function download and make directory
+  getfile_data
+
 else
   echo "Invalid extension in the program: $tag"
 fi
