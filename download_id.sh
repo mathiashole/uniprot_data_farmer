@@ -47,10 +47,7 @@ elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
   
   show_version
 
-fi
-
-# Check if the tag is a valid key in the associative array
-if [[ -n "${tag_extension[$tag]}" ]]; then
+elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key in the associative array
   # Get the corresponding extension from the array
   extension="${tag_extension[$tag]}"
   #echo $extension
@@ -82,7 +79,7 @@ if [ -f "$listID" ]; then
     fi
   done < "$listID"
 else
-  echo "The file $listID does not exist."
+  echo "The file $listID does not exist. You must provide a list of proteins"
   exit 1
 fi
 
