@@ -55,31 +55,31 @@ else
   echo "Invalid extension in the program: $tag"
 fi
 
+getfile_data(){
+  # Check if the "seqDownload" folder exists; if not, create it
+  if [ ! -d "fileDownload" ]; then
+    mkdir fileDownload
+  fi
 
-# Check if the "seqDownload" folder exists; if not, create it
-if [ ! -d "fileDownload" ]; then
-  mkdir fileDownload
-fi
-
-# Check if the text file exists
-if [ -f "$listID" ]; then
-  # Iterate over each line in the text file
-  while IFS= read -r id
-  do
-    # Check if the line contains a valid ID
-    if [[ $id =~ ^[A-Za-z0-9]+$ ]]; then
-       # Download the FASTA file for each valid ID
-      url="https://rest.uniprot.org/uniprotkb/${id}${extension}"
-      file_name="uniprot_${id}${extension}"
-      output_path="fileDownload/$file_name"
-      curl -o "$output_path" "$url"
-      echo "The file $file_name has been downloaded successfully."
-    else
-      echo "Invalid ID in the file: $id"
-    fi
-  done < "$listID"
-else
-  echo "The file $listID does not exist. You must provide a list of proteins"
-  exit 1
-fi
-
+  # Check if the text file exists
+  if [ -f "$listID" ]; then
+    # Iterate over each line in the text file
+    while IFS= read -r id
+    do
+      # Check if the line contains a valid ID
+      if [[ $id =~ ^[A-Za-z0-9]+$ ]]; then
+        # Download the FASTA file for each valid ID
+        url="https://rest.uniprot.org/uniprotkb/${id}${extension}"
+        file_name="uniprot_${id}${extension}"
+        output_path="fileDownload/$file_name"
+        curl -o "$output_path" "$url"
+        echo "The file $file_name has been downloaded successfully."
+      else
+        echo "Invalid ID in the file: $id"
+      fi
+    done < "$listID"
+  else
+    echo "The file $listID does not exist. You must provide a list of proteins"
+    exit 1
+  fi
+}
