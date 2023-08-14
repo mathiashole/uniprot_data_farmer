@@ -46,7 +46,7 @@ getfile_data(){
       # Check if the line contains a valid ID
       if [[ $id =~ ^[A-Za-z0-9]+$ ]]; then
         # Download the FASTA file for each valid ID
-        url="https://rest.uniprot.org/uniprotkb/${id}${extension}"
+        url="https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=${id}&query=accession%${extension}"
         file_name="uniprot_${id}${extension}"
         output_path="fileDownload/$file_name"
         curl -o "$output_path" "$url"
