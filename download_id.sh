@@ -15,6 +15,7 @@ show_help(){
   echo
   echo "🎃 OPTIONS:"
   echo "  -h, --help    Show this help"
+  echo "  -v, --version   Show version"
   echo "  -fas, --fasta   Download fasta file"
   echo "  -json, --json   Download json file"
   echo "  -gff, --gff   Download gff file"
