@@ -64,10 +64,10 @@ getfile_data(){
 
 # Define mapping from tags to extensions in an associative array
 declare -A tag_extension
-tag_extension["-json"]=".json"
-tag_extension["-fasta"]=".fasta"
-tag_extension["-gff"]=".gff"
-tag_extension["-tsv"]=".tsv"
+tag_extension["-json"]="json"
+tag_extension["-fasta"]="fasta"
+tag_extension["-gff"]="gff"
+tag_extension["-tsv"]="tsv"
 
 # Check if a text file was provided as an argument
 if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
