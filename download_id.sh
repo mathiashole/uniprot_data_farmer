@@ -18,6 +18,7 @@ show_help(){
   echo "  -fas, --fasta   Download fasta file"
   echo "  -json, --json   Download json file"
   echo "  -gff, --gff   Download gff file"
+  echo "  -tsv, --tsv   Download tsv file"
   echo
   echo "🎃 ARGUMENTS:"
   echo "  First vector of accession in text format."
