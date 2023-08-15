@@ -26,7 +26,6 @@ show_help(){
   echo
   echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
-  echo "  joacomangino@gmail.com"
   echo "  https://twitter.com/joaquinmangino"
   echo
   echo "  MIT © Mathias Mangino"
