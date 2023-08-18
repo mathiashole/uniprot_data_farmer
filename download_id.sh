@@ -69,6 +69,10 @@ tag_extension["-fasta"]="fasta"
 tag_extension["-gff"]="gff"
 tag_extension["-tsv"]="tsv"
 
+declare -A name_format
+name_format["-accession"]="accession%3A"
+name_format["-gene"]="%28"
+
 # Check if a text file was provided as an argument
 if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
 
@@ -82,6 +86,7 @@ elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key i
   # Get the corresponding extension from the array
   extension="${tag_extension[$tag]}"
   #echo $extension
+  if [[ -n ]]
   # Execute main function download and make directory
   getfile_data
 
