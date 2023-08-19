@@ -47,7 +47,7 @@ getfile_data(){
       # Check if the line contains a valid ID
       if [[ $id =~ ^[A-Za-z0-9]+$ ]]; then
         # Download the FASTA file for each valid ID
-        url="https://rest.uniprot.org/uniprotkb/stream?format=${extension}&query=accession%3A${id}"
+        url="https://rest.uniprot.org/uniprotkb/stream?format=${extension}&query=${name_search}${id}" ## check name_search
         file_name="uniprot_${id}.${extension}"
         output_path="fileDownload/$file_name"
         curl -o "$output_path" "$url"
@@ -86,7 +86,9 @@ elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key i
   # Get the corresponding extension from the array
   extension="${tag_extension[$tag]}"
   #echo $extension
-  if [[ -n ]]
+  if [[ -n "${name_format[$name]}" ]]; then
+    name_search="${name_format[$name]}"
+  fi
   # Execute main function download and make directory
   getfile_data
 
