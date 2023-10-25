@@ -73,26 +73,59 @@ declare -A name_format
 name_format["-accession"]="accession%3A"
 name_format["-gene"]="%28"
 
-# Check if a text file was provided as an argument
-if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
+# # Check if a text file was provided as an argument
+# if [ $# -eq 0 ] || [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
 
-  show_help
+#   show_help
 
-elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
+# elif [[ $1 == "-v" ]] || [[ $1 == "--version" ]]; then
   
-  show_version
+#   show_version
 
-elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key in the associative array
-  # Get the corresponding extension from the array
-  extension="${tag_extension[$tag]}"
-  #echo $extension
-  if [[ -n "${name_format[$name]}" ]]; then
-    name_search="${name_format[$name]}"
-  fi
-  # Execute main function download and make directory
-  getfile_data
+# elif [[ -n "${tag_extension[$tag]}" ]]; then # Check if the tag is a valid key in the associative array
+#   # Get the corresponding extension from the array
+#   extension="${tag_extension[$tag]}"
+#   #echo $extension
+#   if [[ -n "${name_format[$name]}" ]]; then
+#     name_search="${name_format[$name]}"
+#   fi
+#   # Execute main function download and make directory
+#   getfile_data
 
-else
-  echo "Invalid extension in the program: $tag"
+# else
+#   echo "Invalid extension in the program: $tag"
+# fi
+
+# Check if a text file was provided as an argument
+if [ $# -eq 0 ]; then
+  show_help
 fi
 
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      show_help
+      ;;
+    -v|--version)
+      show_version
+      ;;
+    -fas|--fasta|-json|--json|-gff|--gff|-tsv|--tsv)
+      tag=$1
+      name_search=${name_format[$tag]}
+      extension=${tag_extension[$tag]}
+      shift
+      ;;
+    *)
+      listID=$1
+      shift
+      ;;
+  esac
+done
+
+if [ -z "$tag" ] || [ -z "$listID" ]; then
+  echo "Invalid usage. Please see the help message."
+  exit 1
+fi
+
+# Execute the download function
+getfile_data
