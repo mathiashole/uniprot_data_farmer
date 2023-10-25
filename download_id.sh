@@ -22,7 +22,7 @@ show_help(){
   echo "  -tsv, --tsv   Download tsv output file"
   echo
   echo "🎃 ARGUMENTS:"
-  echo "  First vector of accession in text format."
+  echo "  First vector of accession in text format or vector of names genes."
   echo
   echo "🐮 CONTACT"
   echo "  https://github.com/mathiashole"
