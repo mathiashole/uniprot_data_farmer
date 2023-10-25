@@ -6,6 +6,25 @@
 
 ## :hammer: in progress
 
+## :bulb: Quick Examples
+
+```{bash, eval = FALSE}
+uniprot_farmer.sh -fasta <vector with access name, access name single, vector with gene name or single gene name> 
+```
+```{bash, eval = FALSE}
+uniprot_farmer.sh -json <vector with access name, access name single, vector with gene name or single gene name> 
+```
+```{bash, eval = FALSE}
+uniprot_farmer.sh -gff <vector with access name, access name single, vector with gene name or single gene name> 
+```
+```{bash, eval = FALSE}
+uniprot_farmer.sh -tsv <vector with access name, access name single, vector with gene name or single gene name> 
+```
+```{bash, eval = FALSE}
+uniprot_farmer.sh -help 
+```
+`GScissors` extracts the sequence of positions in the input.fasta file, renames it, and saves the resulting sequence in the output.fasta file.
+
 
 ## :sparkling_heart: Contributing
 
